@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Pokedex</h1>
+        <span id="favourites-nav"><i class="fa-regular fa-heart"></i></span>
+    </header>
+    <main>
+        <section id="favourites-catalog-section" class="catalog-section hidden">
+            
+            <div id="favourites-catalog-header" class="catalog-header">
+                <h3 id="favourites-catalog-title" class="catalog-title">Favourites</h3>
+                <span id="favourites-catalog-toggleSearch" class="catalog-toggleSearch"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+            
+            <div id="favourites-catalog-search-section" class="catalog-search-section hidden">
+
+                <input type="text" id="favourite-catalog-input" class="catalog-input">
+
+                <div class="checkboxes">
+                    <label class="type-checkbox"><i class="fa-solid fa-droplet"></i>
+                    <input type="checkbox" id = "favourites-water-checkbox" class = "filter-types">
+                </label>
+
+                <label class="type-checkbox"><i class="fa-brands fa-envira"></i>
+                    <input type="checkbox" id = "favourites-grass-checkbox" class = "filter-types">
+                </label>
+                
+                <label class="type-checkbox"><i class="fa-solid fa-fire"></i>
+                    <input type="checkbox" id = "favourites-fire-checkbox" class = " filter-types">
+                </label>
+                </div>
+            </div>
+            
+            <div class="catalog" id="favourites-catalog">
+
+            </div>
+
+        </section>
+
+        <section id="main-catalog-section" class="catalog-section">
+
+            <div id="main-catalog-header" class="catalog-header">
+                <h3 id="main-catalog-title" class="catalog-title" >All Pokemons</h3>
+                <span id="main-catalog-toggleSearch" class="catalog-toggleSearch"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+
+            <div id="main-catalog-search-section" class="catalog-search-section hidden">
+
+                <input type="text" id="main-catalog-input" class="catalog-input">
+                
+                <div class="checkboxes">
+                    <label class="type-checkbox"><i class="fa-solid fa-droplet"></i>
+                    <input type="checkbox" id = "main-water-checkbox" class = "filter-types">
+                </label>
+
+                <label class="type-checkbox"><i class="fa-brands fa-envira"></i>
+                    <input type="checkbox" id = "main-grass-checkbox" class = "filter-types">
+                </label>
+                
+                <label class="type-checkbox"><i class="fa-solid fa-fire"></i>
+                    <input type="checkbox" id = "main-fire-checkbox" class = " filter-types">
+                </label>
+                </div>
+                
+            </div>
+            <p id="catalog-message"></p>
+            <div class="catalog" id="main-catalog">
+                <!-- KORT HÄR -->
+                 
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>Michael Wolde ~ 2026</p>
+    </footer>
+</body>
+</html>

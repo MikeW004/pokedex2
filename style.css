@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-bg-color: 97, 172, 248;
+    --main-details-color: 1, 48, 96;
+    --secondary-details-color: 253, 250, 160;
+    --card-bg-color: 255, 247, 0;
+
+    background-color: rgb(var(--main-bg-color));
+    color: rgb(var(--main-details-color));
+    min-height: 100vh;
+    width: 100%;
+    scrollbar-width: none;
+    
+    
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid;
+    border-color: black;
+    padding: .25rem;
+    height: fit-content;
+    width: 100%;
+
+}
+
+header h1{
+    margin: .5rem auto;
+}
+#favourites-nav{
+    position: absolute;
+    right: 1rem;
+    margin-left: 1rem;
+}
+#favourites-nav:hover{
+    color: red;
+}
+#favourites-nav:active{
+    color: rgb(var(--main-details-color))
+}
+#favourites-nav.show{
+    color: red;
+}
+
+/* CATALOGS */
+
+.catalog-section{
+    width: 100%;
+    min-height: 30vh;
+    max-height: fit-content;
+    margin: 2rem auto;
+    padding: .5rem;
+   
+    border: 1px solid black;
+}
+#favourites-catalog-section.hidden{
+    display: none;
+}
+
+/* HEADERS */
+.catalog-header{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+.catalog-title{
+    margin: .5rem 0;
+}
+.catalog-toggleSearch{
+    margin: .5rem 0;
+    padding: .25rem;
+    padding-bottom: 0;
+    background-color: rgb(var(--main-details-color), .8);
+    color: rgb(var(--secondary-details-color));
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: rgb(var(--main-details-color));
+}
+.catalog-toggleSearch:hover{
+    background-color: rgb(var(--secondary-details-color));
+    color: rgb(var(--main-details-color));
+}
+.catalog-toggleSearch:active{
+    background-color: rgb(var(--main-details-color), .8);
+    color: rgb(var(--secondary-details-color));
+}
+
+/* CATALOG FILTER POKEMONS */
+.catalog-search-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.catalog-search-section.hidden{
+    display: none;
+}
+.catalog{
+    min-width: 60%;
+    width: fit-content;
+    max-width: 90%;
+
+    min-height: 30vh;
+    max-height: 70vh;
+
+    overflow-y: auto;
+    overflow-x: visible;
+    padding: 1rem;
+    margin: .5rem auto;
+    border: 3px solid;
+    border-color: rgb(var(--main-details-color), .5);
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
+    justify-items: center;
+    justify-content: center;
+    gap: 1rem;
+    scrollbar-width: none;
+
+}
+.card{
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 3px solid;
+    border-color: rgb(var(--main-details-color));
+    border-radius: 5px;
+}
+.card.expanded{
+    width: 250px;
+    height: fit-content;
+    z-index: 1;
+    /* background-color: blue; */
+}
+.card-header{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    padding: .5rem;
+    gap: .5rem;
+    background-color: rgb(var(--card-bg-color), .3);
+}
+.card-star{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem;
+}
+.card-star.hidden{
+    color: red;
+}
+.card-body{   
+    flex: 1;
+    background-color: rgb(249, 227, 30);
+}
+.card-pokemon-img{
+    width: 100%;
+    object-fit: cover;
+}
+.card-details{
+    background-color: rgba(254, 254, 254, 0.5);
+    height: fit-content;
+    min-height: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.detail-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+.label{
+    width: fit-content;
+    margin: .25rem;
+    background-color: rgb(var(--secondary-details-color));
+    padding: .25rem;
+    border: 1px solid;
+    border-color: rgb(var(--main-bg-color));
+}
+.label.value-label{
+    background-color: red;
+}
+.card-details.hidden{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+footer{
+    height: 5vh;
+    width: 100%;
+    border: 1px solid;
+    border-color: rgb(var(--main-details-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    background-color: rgb(var(--main-details-color));
+    color: rgb(var(--secondary-details-color));
+   
+}
+footer *{
+    width: fit-content;
+}
+
+@media (min-width: 480px){
+    :root{
+        scrollbar-width: thin;
+    }
+    .catalog{
+        scrollbar-width: thin;
+    }
+}
